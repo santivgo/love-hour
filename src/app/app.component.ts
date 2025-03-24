@@ -10,8 +10,7 @@ import { ICarouselImage } from './interfaces/carousel-images';
 export class AppComponent {
   div_content_active: boolean = false;
   title = `programei tanto, que não consegui pensar num texto bonito entao:`
-  content: string = `Que nosso amor seja igual a pomba do jumento: grande, forte, as vezes pode balançar, mas
-                    ninguém tem coragem de se meter na frente!!!`
+  content: string = `Que nosso amor seja infinito, transcendendo o tempo se for possível.`
   dateNow: Date = new Date(2025, 0, 18);
 
   imageList: ICarouselImage[] = [{
