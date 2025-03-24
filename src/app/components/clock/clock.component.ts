@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { IClock } from '../../interfaces/clock';
 import { differenceInMonths, differenceInDays, differenceInHours, differenceInMinutes, differenceInSeconds } from 'date-fns';
 
@@ -10,6 +10,10 @@ import { differenceInMonths, differenceInDays, differenceInHours, differenceInMi
 })
 export class ClockComponent {
   clock: IClock | undefined;
+
+  @Input({ 'required': true })
+  dateDate: any;
+
 
   constructor(private cdr: ChangeDetectorRef) { }
 
@@ -23,15 +27,14 @@ export class ClockComponent {
   }
   updateClock() {
 
-    const dateDate = new Date(2025, 0, 18)
     const dataAtual = new Date()
     dataAtual.toLocaleString('pt-BR', { timeZone: 'America/Fortaleza' })
-    const diferencaMeses = differenceInMonths(dataAtual, dateDate)
-    const diferencaDias = differenceInDays(dataAtual, dateDate) % 30
-    const diferencaHoras = differenceInHours(dataAtual, dateDate) % 24
+    const diferencaMeses = differenceInMonths(dataAtual, this.dateDate)
+    const diferencaDias = differenceInDays(dataAtual, this.dateDate) % 30
+    const diferencaHoras = differenceInHours(dataAtual, this.dateDate) % 24
 
-    const diferencaMinutos = differenceInMinutes(dataAtual, dateDate) % 60
-    const diferencaSegundos = differenceInSeconds(dataAtual, dateDate) % 60
+    const diferencaMinutos = differenceInMinutes(dataAtual, this.dateDate) % 60
+    const diferencaSegundos = differenceInSeconds(dataAtual, this.dateDate) % 60
 
 
     this.clock = {

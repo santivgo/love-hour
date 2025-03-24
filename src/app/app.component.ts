@@ -9,7 +9,10 @@ import { ICarouselImage } from './interfaces/carousel-images';
 })
 export class AppComponent {
   div_content_active: boolean = false;
-
+  title = `programei tanto, que não consegui pensar num texto bonito entao:`
+  content: string = `Que nosso amor seja igual a pomba do jumento: grande, forte, as vezes pode balançar, mas
+                    ninguém tem coragem de se meter na frente!!!`
+  dateNow: Date = new Date(2025, 0, 18);
 
   imageList: ICarouselImage[] = [{
     imageSrc: 'assets/img/1.jpg',
@@ -35,7 +38,6 @@ export class AppComponent {
 
   toggle_active(event: boolean) {
     this.div_content_active = true;
-    console.log(this.div_content_active)
   }
 
 

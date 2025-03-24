@@ -9,22 +9,19 @@
             <app-carousel [imageList]="imageList"></app-carousel>
         </div>
         <div class="text-space">
-
             <mat-divider [vertical]="true"></mat-divider>
-
             <div>
-
-                <p>
-                    programei tanto, que não consegui pensar num texto bonito entao:
-                </p>
-                <h1> Que nosso amor seja igual a pomba do jumento: grande, forte, as vezes pode balançar, mas
-                    ninguém tem coragem de se meter na frente!!!
+                <h5>
+                    {{title}}
+                </h5>
+                <h1>
+                    {{content}}
                 </h1>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <app-clock></app-clock>
+        <app-clock [dateDate]="initialDate"></app-clock>
     </div>
 </div>

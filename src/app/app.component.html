@@ -7,7 +7,8 @@
   <div class="principal--content" *ngIf="div_content_active">
 
     <div class="principal--content--card">
-      <app-real-content [image-list]="imageList"></app-real-content>
+      <app-real-content [initialDate]="dateNow" [title]="title" [content]="content"
+        [image-list]="imageList"></app-real-content>
     </div>
   </div>
 </div>

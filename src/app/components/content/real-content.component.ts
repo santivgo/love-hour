@@ -12,22 +12,20 @@ import { ICarouselImage } from '../../interfaces/carousel-images';
 export class RealContentComponent {
   @Input({ 'alias': 'image-list', required: true })
   imageList: ICarouselImage[] = [] as ICarouselImage[];
+  @Input({ 'required': true }) title: string = ''
+  @Input({ 'required': true }) content: string = ''
+  @Input({ 'required': true }) initialDate: any;
 
-  intervaloId: any;
 
   constructor(private renderer: Renderer2, private el: ElementRef) { }
   ngOnInit(): void {
-    this.intervaloId = setInterval(() => {
+    setInterval(() => {
 
       this.createHeart()
     }, 50)
 
   }
 
-  ngOnDestroy(): void {
-    clearInterval(this.intervaloId)
-
-  }
 
   createHeart(): void {
     const heart = this.renderer.createElement('div');
